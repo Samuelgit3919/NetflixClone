@@ -4,6 +4,7 @@ import "./header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
         <div className="header_left">
           <ul>
             <li>
-              <img width={200} src={NeflixLogo} alt="netflix logo" />
+              <img width={150} src={NeflixLogo} alt="netflix logo" />
             </li>
             <li>Home</li>
             <li>TV Shows</li>
@@ -34,7 +35,7 @@ const Header = () => {
               <AccountCircleIcon />
             </li>
             <li>
-              <ArrowFropDownIcon />
+              <ExpandMoreIcon />
             </li>
           </ul>
         </div>
