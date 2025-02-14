@@ -3,6 +3,9 @@
   justify-content: center;
   background-color: #111;
   color: grey;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .footer_inner_container {
   width: 60%;
@@ -48,5 +51,3 @@
   font-size: 12px;
   margin-bottom: 10px;
 }
-
-
