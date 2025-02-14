@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import requests from "../utils/requests";
+
 import "./Banner.css";
 
 const Banner = () => {
   const [movie, setMovie] = useState({});
-  // https://api.themoviedb.org/3//discover/tv?api_key=$950e969ccbc798833af2c6292a2fc253&with_networks=123
+  // `https://api.themoviedb.org/3/discover/tv?api_key=950e969ccbc798833af2c6292a2fc253&with_networks=123`
   useEffect(() => {
+    console.log("API Key:", import.meta.env.VITE_API_KEY);
+    console.log("Base URL:", import.meta.env.VITE_BASE_URL);
     (async () => {
       try {
-        const request = await axios.get(
-          // https://api.themoviedb.org/3/discover/tv?api_key=950e969ccbc798833af2c6292a2fc253&with_networks=123
-          `https://api.themoviedb.org/3/discover/tv?api_key=950e969ccbc798833af2c6292a2fc253&with_networks=123`
-        );
-        console.log(request);
-
+        const request = await axios.get(requests.fetchNetflixOriginals);
         setMovie(
           request.data.results[
             Math.floor(Math.random() * request.data.results.length)
           ]
         );
       } catch (error) {
-        console.log("error", error);
+        console.log(error);
       }
     })();
   }, []);
