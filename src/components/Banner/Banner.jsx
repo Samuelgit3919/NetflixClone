@@ -8,8 +8,6 @@ const Banner = () => {
   const [movie, setMovie] = useState({});
   // `https://api.themoviedb.org/3/discover/tv?api_key=950e969ccbc798833af2c6292a2fc253&with_networks=123`
   useEffect(() => {
-    console.log("API Key:", import.meta.env.VITE_API_KEY);
-    console.log("Base URL:", import.meta.env.VITE_BASE_URL);
     (async () => {
       try {
         const request = await axios.get(requests.fetchNetflixOriginals);
