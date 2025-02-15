@@ -1,47 +1,54 @@
-// import React from 'react'
-import NeflixLogo from "../../assets/images/netflixLogo.png";
-import "./header.css";
-import SearchIcon from "@mui/icons-material/Search";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from 'react';
+import './Header.css';
+import Netflix_Logo from '../../assets/images/netflixLogo.png';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import MenuIcon from '@mui/icons-material/Menu';
 
-const Header = () => {
+function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Start with menu closed
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+
   return (
-    <div className="header_outer_container">
-      <div className="header_container">
-        <div className="header_left">
-          <ul>
-            <li>
-              <img width={150} src={NeflixLogo} alt="netflix logo" />
+    <nav className="NavigationBar_Container">
+      <div className="Header-Container">
+        <div className="leftSide-Container">
+          <ul className={`menu ${isMenuOpen ? 'menu-open' : ''}`}>
+            <li className="logo">
+              <img className="logoimage" src={Netflix_Logo} alt="Netflix Logo" />
             </li>
             <li>Home</li>
-            <li>TV Shows</li>
+            <li>Tvshow</li>
             <li>Movies</li>
-            <li>Latest</li>
-            <li>MyList</li>
-            <li>Browse by Languages</li>
+            <li>New & Popular</li>
+            <li>My List</li>
+            <li>Browse By Language</li>
           </ul>
         </div>
-        <div className="header_right">
-          <ul>
-            <li>
-              <SearchIcon />
-            </li>
-            <li>
-              <NotificationsIcon />
-            </li>
-            <li>
-              <AccountCircleIcon />
-            </li>
-            <li>
-              <ExpandMoreIcon />
-            </li>
+
+        <div className="RightSide-Container">
+          <ul className={`rightSide-Container ${isMenuOpen ? 'menu-open' : ''}`}>
+            <li className='hover:cursor-pointer'><SearchIcon /></li>
+            <li className='hover:cursor-pointer'><NotificationsNoneIcon /></li>
+            <li className='hover:cursor-pointer'><AccountBoxIcon /></li>
+            <li className='hover:cursor-pointer'><ArrowDropDownIcon /></li>
           </ul>
         </div>
+
+        {/* Menu Toggle Button */}
+        <button className="menu-toggle-btn" onClick={toggleMenu}>
+          <MenuIcon />
+        </button>
       </div>
-    </div>
+    </nav>
   );
-};
+}
 
 export default Header;
