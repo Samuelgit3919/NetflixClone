@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import requests from "../utils/requests";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "./Banner.css";
 
 const Banner = () => {
