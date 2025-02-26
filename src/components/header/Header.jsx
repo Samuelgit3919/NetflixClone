@@ -15,12 +15,12 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-
   return (
     <nav className="NavigationBar_Container">
       <div className="Header-Container">
+        {/* Left Side Menu */}
         <div className="leftSide-Container">
-          <ul className={`menu ${isMenuOpen ? 'menu-open' : ''}`}>
+          <ul className={`menu ${isMenuOpen ? 'menu-open' : 'menu-closed'}`}>
             <li className="logo">
               <img className="logoimage" src={Netflix_Logo} alt="Netflix Logo" />
             </li>
@@ -33,8 +33,9 @@ function Header() {
           </ul>
         </div>
 
+        {/* Right Side Icons */}
         <div className="RightSide-Container">
-          <ul className={`rightSide-Container ${isMenuOpen ? 'menu-open' : ''}`}>
+          <ul className={`rightSide-Container ${isMenuOpen ? 'menu-open' : 'menu-closed'}`}>
             <li className='hover:cursor-pointer'><SearchIcon /></li>
             <li className='hover:cursor-pointer'><NotificationsNoneIcon /></li>
             <li className='hover:cursor-pointer'><AccountBoxIcon /></li>

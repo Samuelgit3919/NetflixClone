@@ -1,19 +1,25 @@
+/* Logo Image */
 .logoimage {
   width: 100px;
 }
 
+/* Navigation Bar Container */
 .NavigationBar_Container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   background-color: rgb(20, 20, 20);
-  height: 10vh;
+  height: 8vh;
+  margin-bottom: 2.3rem;
   color: #fff;
   transition: all 0.5s ease-in;
   z-index: 1;
+  top: 0;
 }
 
+/* Header Container */
 .Header-Container {
   width: 90%;
   display: flex;
@@ -21,33 +27,42 @@
   align-items: center;
 }
 
+/* Remove default list styling */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 ul li {
   list-style: none;
 }
 
-/* Default styles for larger screens */
-.leftSide-Container ul,
-.RightSide-Container ul {
+/* Left Side Menu */
+.leftSide-Container ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  /* Add gap between menu items */
 }
 
 .leftSide-Container ul li:hover {
   cursor: pointer;
 }
 
-.leftSide-Container ul {
-  width: 140%;
-}
-
+/* Right Side Icons */
 .RightSide-Container ul {
-  width: 150%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  /* Add gap between icons */
 }
 
-/* Menu Toggle Button for small screens */
+/* Menu Toggle Button */
 .menu-toggle-btn {
   display: none;
+  /* Hidden by default */
   background: none;
   border: none;
   color: white;
@@ -55,47 +70,59 @@ ul li {
   font-size: 1.5rem;
 }
 
-/* Responsive styles for tablets and smaller devices */
+/* Responsive Styles for Tablets and Smaller Devices */
 @media screen and (max-width: 768px) {
   .Header-Container {
     width: 95%;
   }
+  
 
+  /* Show the toggle button on smaller screens */
   .menu-toggle-btn {
-    display: block; /* Show the button on smaller screens */
+    display: block;
   }
 
   /* Hide the left menu by default on small screens */
   .leftSide-Container ul {
-    display: none; /* Ensure the menu is hidden initially */
-    flex-direction: column; /* Stack vertically */
+    display: none;
+    flex-direction: column;
     background-color: rgb(20, 20, 20);
-    position: absolute; /* Overlay on the screen */
-    top: 10vh; /* Below the navbar */
+    position: absolute;
+    top: 8vh;
+    /* Below the navbar */
     left: 0;
     width: 100%;
+    padding: 10px 0;
   }
 
-  /* Display the left menu when toggled open */
-  .menu-open {
-    display: flex; /* Show the menu */
+
+  /* Show the left menu when toggled open */
+  .leftSide-Container ul.menu-open {
+    display: flex;
   }
 
-  /* Ensure the right side menu behaves correctly */
+  .leftSide-Container ul.logoimage {
+    display: block;
+  }
+
+  /* Ensure the right side menu stays visible */
   .RightSide-Container ul {
-    display: flex; /* Always show this menu */
-    flex-direction: row; /* Keep it horizontal */
+    display: flex;
+    flex-direction: row;
   }
 }
 
-/* Extra small devices (phones) */
+/* Extra Small Devices (Phones) */
 @media screen and (max-width: 480px) {
   .logoimage {
-    width: 60px; /* Adjust logo size */
+    width: 60px;
+    display: block;
+    /* Adjust logo size */
   }
 
   ul li {
-    font-size: 12px; /* Smaller font size for menu items */
+    font-size: 12px;
+    /* Smaller font size for menu items */
     margin-right: 5px;
   }
 }
