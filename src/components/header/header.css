@@ -1,9 +1,11 @@
-/* Logo Image */
 .logoimage {
   width: 100px;
 }
 
-/* Navigation Bar Container */
+.logo-menu {
+  display: none;
+}
+
 .NavigationBar_Container {
   display: flex;
   justify-content: center;
@@ -19,7 +21,6 @@
   top: 0;
 }
 
-/* Header Container */
 .Header-Container {
   width: 90%;
   display: flex;
@@ -27,7 +28,6 @@
   align-items: center;
 }
 
-/* Remove default list styling */
 ul {
   padding: 0;
   margin: 0;
@@ -37,32 +37,26 @@ ul li {
   list-style: none;
 }
 
-/* Left Side Menu */
 .leftSide-Container ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  /* Add gap between menu items */
 }
 
 .leftSide-Container ul li:hover {
   cursor: pointer;
 }
 
-/* Right Side Icons */
 .RightSide-Container ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  /* Add gap between icons */
 }
 
-/* Menu Toggle Button */
 .menu-toggle-btn {
   display: none;
-  /* Hidden by default */
   background: none;
   border: none;
   color: white;
@@ -70,59 +64,66 @@ ul li {
   font-size: 1.5rem;
 }
 
-/* Responsive Styles for Tablets and Smaller Devices */
 @media screen and (max-width: 768px) {
   .Header-Container {
     width: 95%;
   }
-  
 
-  /* Show the toggle button on smaller screens */
-  .menu-toggle-btn {
+  .logo-menu {
     display: block;
   }
 
-  /* Hide the left menu by default on small screens */
+  .menu-toggle-btn {
+    display: flex;
+
+
+  }
+
+  \  .leftSide-Container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+
   .leftSide-Container ul {
     display: none;
     flex-direction: column;
     background-color: rgb(20, 20, 20);
     position: absolute;
     top: 8vh;
-    /* Below the navbar */
     left: 0;
     width: 100%;
     padding: 10px 0;
   }
 
-
-  /* Show the left menu when toggled open */
   .leftSide-Container ul.menu-open {
     display: flex;
   }
 
-  .leftSide-Container ul.logoimage {
-    display: block;
-  }
 
-  /* Ensure the right side menu stays visible */
   .RightSide-Container ul {
     display: flex;
     flex-direction: row;
   }
 }
 
-/* Extra Small Devices (Phones) */
 @media screen and (max-width: 480px) {
   .logoimage {
     width: 60px;
+  }
+
+  .logo-menu {
     display: block;
-    /* Adjust logo size */
   }
 
   ul li {
     font-size: 12px;
-    /* Smaller font size for menu items */
     margin-right: 5px;
+  }
+
+
+  .leftSide-Container {
+    gap: 10px;
   }
 }

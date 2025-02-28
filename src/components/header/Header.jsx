@@ -32,7 +32,9 @@ function Header() {
             <li>Browse By Language</li>
           </ul>
         </div>
-
+        <div className="logo-menu">
+          <img className="logoimage" src={Netflix_Logo} alt="Netflix Logo" />
+        </div>
         {/* Right Side Icons */}
         <div className="RightSide-Container">
           <ul className={`rightSide-Container ${isMenuOpen ? 'menu-open' : 'menu-closed'}`}>
