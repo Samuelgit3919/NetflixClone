@@ -20,7 +20,7 @@ function Header() {
       <div className="Header-Container">
         {/* Left Side Menu */}
         <div className="leftSide-Container">
-          <ul className={`menu ${isMenuOpen ? 'menu-open' : 'menu-closed'}`}>
+          <ul className={`menu ${isMenuOpen && 'menu-open'}`}>
             <li className="logo">
               <img className="logoimage" src={Netflix_Logo} alt="Netflix Logo" />
             </li>
